@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小滿旅行社 | 日韓泰陸包車專家</title>
+    <link rel="canonical" href="https://goworld.com.tw/" />
+    <meta property="og:url" content="https://goworld.com.tw/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --accent: #c9a227;
+            --cream: #faf8f5;
+            --warm-white: #fffef9;
+            --text-dark: #2d3748;
+            --text-muted: #718096;
+            --border-light: rgba(26, 54, 93, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(250, 248, 245, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary) 0%, #2d4a7c 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo-text {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: 0.05em;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 400;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--cream) 0%, #f0ebe3 100%);
+            overflow: hidden;
+        }
+
+        .hero-bg-pattern {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(201, 162, 39, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(26, 54, 93, 0.06) 0%, transparent 50%);
+        }
+
+        .hero-decoration {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border: 1px solid var(--border-light);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            animation: circleExpand 1.5s ease-out 0.5s forwards;
+        }
+
+        .hero-decoration:nth-child(2) {
+            width: 800px;
+            height: 800px;
+            animation-delay: 0.7s;
+        }
+
+        @keyframes circleExpand {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            padding: 2rem;
+            opacity: 0;
+            animation: fadeUp 1s ease-out 0.3s forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--warm-white);
+            border: 1px solid var(--border-light);
+            padding: 0.5rem 1.25rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: #48bb78;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .hero h1 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.1em;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            font-weight: 300;
+            line-height: 2;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--primary);
+            color: var(--warm-white);
+            padding: 1rem 2.5rem;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(26, 54, 93, 0.2);
+        }
+
+        .hero-cta:hover {
+            background: #2d4a7c;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(26, 54, 93, 0.3);
+        }
+
+        .hero-cta svg {
+            transition: transform 0.3s ease;
+        }
+
+        .hero-cta:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 8rem 2rem;
+            background: var(--warm-white);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-family: 'Noto Serif TC', serif;
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--cream);
+            border-radius: 24px;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid transparent;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--card-accent, var(--accent));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+            z-index: 10;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--border-light);
+            box-shadow: 0 20px 60px rgba(26, 54, 93, 0.15);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card.japan { --card-accent: #dc3545; }
+        .service-card.korea { --card-accent: #0d6efd; }
+        .service-card.thailand { --card-accent: #fd7e14; }
+        .service-card.china { --card-accent: #ffc107; }
+        .service-card.okinawa { --card-accent: #20c997; }
+        .service-card.kyushu { --card-accent: #6f42c1; }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--warm-white);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        }
+
+        .service-country {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .service-name {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .service-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--card-accent, var(--accent));
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .service-link svg {
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-link svg {
+            transform: translateX(4px);
+        }
+
+        /* About Section */
+        .about {
+            padding: 8rem 2rem;
+            background: linear-gradient(180deg, var(--warm-white) 0%, var(--cream) 100%);
+        }
+
+        .about-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-visual {
+            position: relative;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, var(--primary) 0%, #2d4a7c 100%);
+            border-radius: 24px;
+            aspect-ratio: 4/5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='rgba(201,162,39,0.1)' d='M47.5,-57.2C59.9,-47.8,67.5,-31.5,71.1,-14.1C74.7,3.3,74.3,21.7,66.4,36.3C58.5,50.9,43.1,61.6,26.5,67.4C9.9,73.2,-7.9,74.1,-24.5,69.4C-41.1,64.7,-56.5,54.4,-65.8,40.1C-75.1,25.8,-78.3,7.5,-74.8,-9.2C-71.3,-25.9,-61.1,-41,-47.7,-50.3C-34.3,-59.6,-17.2,-63.1,0.3,-63.5C17.8,-63.9,35.1,-66.6,47.5,-57.2Z' transform='translate(100 100)'/%3E%3C/svg%3E") center/cover;
+            opacity: 0.5;
+        }
+
+        .about-text-overlay {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: var(--warm-white);
+            padding: 2rem;
+        }
+
+        .about-text-overlay .number {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .about-text-overlay .label {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+        .about-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--warm-white);
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(26, 54, 93, 0.15);
+        }
+
+        .about-badge-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent) 0%, #d4af37 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .about-badge-text {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .about-info h2 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-info p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .credentials {
+            background: var(--warm-white);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .credentials-title {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .credentials-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .credential-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        .credential-item svg {
+            color: #48bb78;
+            flex-shrink: 0;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            background: var(--primary);
+            color: var(--warm-white);
+        }
+
+        .contact-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .contact-desc {
+            opacity: 0.8;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        .offices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .office-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.75rem;
+            text-align: left;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .office-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .office-badge {
+            position: absolute;
+            top: -10px;
+            right: 16px;
+            background: var(--accent);
+            color: var(--primary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+        }
+
+        .office-title {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .office-company {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-bottom: 1rem;
+        }
+
+        .office-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .office-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .office-item svg {
+            flex-shrink: 0;
+            margin-top: 2px;
+            opacity: 0.7;
+        }
+
+        .office-item a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .office-item a:hover {
+            color: var(--accent);
+        }
+
+        .partner-info {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 1.5rem;
+            border-radius: 100px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .partner-info svg {
+            opacity: 0.7;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f2644;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-copyright {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                padding: 0.75rem 1rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero-content {
+                padding: 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-visual {
+                order: -1;
+            }
+
+            .about-badge {
+                right: 10px;
+                bottom: -10px;
+            }
+
+            .offices-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .partner-info {
+                flex-direction: column;
+                text-align: center;
+                border-radius: 16px;
+                padding: 1.25rem;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* Scroll animation */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="logo">
+                <div class="logo-icon">滿</div>
+                <span class="logo-text">小滿旅行社</span>
+            </div>
+            <nav>
+                <a href="#services">包車服務</a>
+                <a href="#about">關於我們</a>
+                <a href="#contact">聯絡我們</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-bg-pattern"></div>
+        <div class="hero-decoration"></div>
+        <div class="hero-decoration"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="dot"></span>
+                <span>交觀甲字第881300 合法立案</span>
+            </div>
+            <h1>小滿<span>旅行社</span></h1>
+            <p class="hero-subtitle">
+                台灣觀光局合法登記甲種旅行社<br>
+                提供日本、韓國、泰國、大陸等主要旅遊景點<br>
+                最專業的包車與私人導遊服務
+            </p>
+            <a href="#services" class="hero-cta">
+                探索服務
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-header">
+            <div class="section-label">Our Services</div>
+            <h2 class="section-title">專業包車服務</h2>
+            <p class="section-desc">精選亞洲熱門旅遊目的地，提供安全舒適的包車與專業導遊服務</p>
+        </div>
+        <div class="services-grid">
+            <a href="https://gojapan.com.tw/" target="_blank" class="service-card japan animate-on-scroll">
+                <div class="service-content">
+                    <div class="service-icon">🗾</div>
+                    <div class="service-country">日本包車</div>
+                    <div class="service-name">GoJapan</div>
+                    <p class="service-desc">提供東京、大阪、京都、北海道等全日本主要城市的專業包車服務。配備中文司機導遊，深入當地秘境景點，無論是賞櫻、賞楓、溫泉之旅或購物行程，都能為您量身規劃最完美的日本自由行體驗。</p>
+                    <div class="service-link">
+                        日本包車
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+            <a href="https://gokorea.com.tw/" target="_blank" class="service-card korea animate-on-scroll">
+                <div class="service-content">
+                    <div class="service-icon">🇰🇷</div>
+                    <div class="service-country">韓國包車</div>
+                    <div class="service-name">GoKorea</div>
+                    <p class="service-desc">首爾、釜山、濟州島專業包車旅遊，中文司機帶您暢遊韓劇拍攝地、傳統韓屋村、明洞購物區及道地美食街。從機場接送到客製化行程，讓您輕鬆體驗韓國文化魅力，追星購物一次滿足。</p>
+                    <div class="service-link">
+                        韓國包車
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+            <a href="https://gothailand.com.tw/" target="_blank" class="service-card thailand animate-on-scroll">
+                <div class="service-content">
+                    <div class="service-icon">🇹🇭</div>
+                    <div class="service-country">泰國包車</div>
+                    <div class="service-name">GoThailand</div>
+                    <p class="service-desc">曼谷、清邁、芭達雅、普吉島包車自由行首選。專業中文司機帶您探索大皇宮、水上市場、古城遺跡與熱帶海島風情。避開擁擠人潮，享受冷氣車內的舒適旅程，深度體驗泰國獨特的佛教文化與熱情風土。</p>
+                    <div class="service-link">
+                        泰國包車
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+            <a href="https://gochina.com.tw/" target="_blank" class="service-card china animate-on-scroll">
+                <div class="service-content">
+                    <div class="service-icon">🇨🇳</div>
+                    <div class="service-country">大陸包車</div>
+                    <div class="service-name">GoChina</div>
+                    <p class="service-desc">北京、上海、杭州、張家界等大陸熱門城市包車服務。專業司機帶您遊覽長城、故宮、西湖、黃山等世界級景點。無論商務考察或深度旅遊，提供舒適車輛與貼心服務，讓您盡情探索中華大地壯麗山河。</p>
+                    <div class="service-link">
+                        大陸包車
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+            <a href="https://okajapan.com" target="_blank" class="service-card okinawa animate-on-scroll">
+                <div class="service-content">
+                    <div class="service-icon">🚗</div>
+                    <div class="service-country">沖繩中文租車</div>
+                    <div class="service-name">OKA Japan</div>
+                    <p class="service-desc">沖繩自駕遊最佳選擇！提供中文導航、中文客服的租車服務，車款多元從小型車到休旅車應有盡有。那霸機場取還車超便利，輕鬆暢遊美麗海水族館、古宇利島、國際通，享受沖繩碧海藍天的自由旅程。</p>
+                    <div class="service-link">
+                        沖繩中文租車
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+            <a href="https://kyujapan.com/" target="_blank" class="service-card kyushu animate-on-scroll">
+                <div class="service-content">
+                    <div class="service-icon">🚙</div>
+                    <div class="service-country">福岡・九州中文租車</div>
+                    <div class="service-name">KYU Japan</div>
+                    <p class="service-desc">九州自駕旅遊首選！福岡機場取還車，中文導航與客服讓您暢行無阻。探索博多美食、由布院溫泉、阿蘇火山、長崎夜景、熊本城等九州經典景點，體驗日本南國獨特的自然風光與人文魅力。</p>
+                    <div class="service-link">
+                        福岡・九州中文租車
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-content">
+            <div class="about-visual animate-on-scroll">
+                <div class="about-image">
+                    <div class="about-text-overlay">
+                        <div class="number">甲種</div>
+                        <div class="label">合法旅行業</div>
+                    </div>
+                </div>
+                <div class="about-badge">
+                    <div class="about-badge-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <div class="about-badge-text">品保協會認證</div>
+                </div>
+            </div>
+            <div class="about-info animate-on-scroll">
+                <h2>值得信賴的旅遊夥伴</h2>
+                <p>
+                    小滿旅行社為台灣觀光局列管且完成合法登記的甲種旅行社，我們致力於提供旅客最有保障的亞洲包車與私人導遊服務。
+                </p>
+                <p>
+                    無論您是商務出差或休閒旅遊，我們專業的團隊都能為您量身打造最適合的行程，讓您的旅途安心又舒適。
+                </p>
+                <div class="credentials">
+                    <div class="credentials-title">合法認證</div>
+                    <div class="credentials-list">
+                        <div class="credential-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            <span>交觀甲字第881300（甲種旅行業）</span>
+                        </div>
+                        <div class="credential-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            <span>旅行業品質保障協會：北2752號</span>
+                        </div>
+                        <div class="credential-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            <span>統一編號：00107040</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-inner">
+            <h2>聯絡我們</h2>
+            <p class="contact-desc">專業客服團隊，為您提供最完善的旅遊諮詢服務</p>
+            
+            <div class="offices-grid">
+                <div class="office-card">
+                    <div class="office-badge">總公司</div>
+                    <h3 class="office-title">台北總公司</h3>
+                    <div class="office-info">
+                        <div class="office-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span>台北市中山區松江路206號12樓之5</span>
+                        </div>
+                        <div class="office-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <a href="tel:02-77290399">02-7729-0399</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="office-card">
+                    <h3 class="office-title">台中服務處</h3>
+                    <div class="office-info">
+                        <div class="office-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span>台中市南區美村路2段168巷7號</span>
+                        </div>
+                        <div class="office-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <a href="tel:04-37046869">04-3704-6869（代表號）</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="office-card">
+                    <h3 class="office-title">沖繩服務處</h3>
+                    <div class="office-company">小満株式会社</div>
+                    <div class="office-info">
+                        <div class="office-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span>沖縄県宜野湾市大山 2-8-12-1</span>
+                        </div>
+                        <div class="office-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <a href="tel:+81989528959">+81 98-952-8959</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="office-card">
+                    <h3 class="office-title">大阪服務處</h3>
+                    <div class="office-company">OTB株式会社</div>
+                    <div class="office-info">
+                        <div class="office-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span>大阪市東淀川区東中島2丁目15-19</span>
+                        </div>
+                        <div class="office-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <a href="tel:+81671618869">+81 06-7161-8869</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="partner-info">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+                <span>行銷合作與業務推廣：小滿科技公司 統編 90276181</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://gojapan.com.tw/" target="_blank">日本包車</a>
+            <a href="https://gokorea.com.tw/" target="_blank">韓國包車</a>
+            <a href="https://gothailand.com.tw/" target="_blank">泰國包車</a>
+            <a href="https://gochina.com.tw/" target="_blank">大陸包車</a>
+            <a href="https://okajapan.com" target="_blank">沖繩租車</a>
+            <a href="https://kyujapan.com/" target="_blank">九州租車</a>
+        </div>
+        <div class="footer-copyright">
+            © 2026 小滿旅行社 All Rights Reserved. | 交觀甲字第881300 | 統編：00107040
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.style.boxShadow = '0 4px 20px rgba(26, 54, 93, 0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
